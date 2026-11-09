@@ -1,0 +1,17 @@
+{
+    "name": "tunnelbox",
+    "version": "1.0.0",
+    "description": "TunnelBox Lean Canvas validation workspace",
+    "private": true,
+    "workspaces": [
+        "client",
+        "server"
+    ],
+    "scripts": {
+        "dev": "concurrently -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"bun run --filter server dev\" \"bun run --filter client dev\"",
+        "build": "bun run --filter client build"
+    },
+    "devDependencies": {
+        "concurrently": "^10.0.6"
+    }
+}
